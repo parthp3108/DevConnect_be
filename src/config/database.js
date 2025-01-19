@@ -12,9 +12,9 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    console.log("DB_CONNECTION_SECRET:", process.env.DB_CONNECTION_SECRET);
+    // console.log("DB_CONNECTION_SECRET:", process.env.DB_CONNECTION_SECRET );
 
-    await mongoose.connect(process.env.DB_CONNECTION_SECRET, {
+    await mongoose.connect(process.env.DB_CONNECTION_SECRET||'mongodb+srv://parthpancholi31:3HmovJHbg7UyQ2DI@cluster0.rgzog.mongodb.net/LinkdIn', {
  
     });
 
