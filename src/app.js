@@ -1,6 +1,6 @@
 
 
-require("dotenv").config({ path: "./src/.env" });
+// require("dotenv").config({ path: "./src/.env" });
 const express = require("express");
 const connectDB = require("./config/database");
 const cors = require("cors");
@@ -13,19 +13,18 @@ const userRouter = require("./routes/user");
 
 const app = express();
 
-// Debug environment variables
-console.log("Environment Variables:");
-console.log("DB_CONNECTION_SECRET:", process.env.DB_CONNECTION_SECRET);
-console.log("PORT:", process.env.PORT);
+
 
 // CORS configuration
+const cors = require("cors");
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://43.204.102.111", // Update with your frontend's origin
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+
 
 // Preflight handling
 app.options("*", (req, res) => {
@@ -62,7 +61,7 @@ app.use("/", userRouter);
 // Database connection and server startup
 connectDB()
   .then(() => {
-    const PORT = process.env.PORT || 7777;
+    const PORT =7777;
     console.log("Database connection established");
     app.listen(7777, () => {
       console.log(`Server is running on port ${PORT}`);
