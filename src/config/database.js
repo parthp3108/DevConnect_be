@@ -15,7 +15,7 @@ const connectDB = async () => {
     // console.log("DB_CONNECTION_SECRET:", process.env.DB_CONNECTION_SECRET );
 
     await mongoose.connect('mongodb+srv://parthpancholi31:3HmovJHbg7UyQ2DI@cluster0.rgzog.mongodb.net/LinkdIn', {
- 
+    
     });
 
     console.log("Connected to MongoDB");
