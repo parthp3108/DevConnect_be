@@ -16,7 +16,6 @@ const app = express();
 
 
 // CORS configuration
-const cors = require("cors");
 app.use(
   cors({
     origin: "http://43.204.102.111", // Update with your frontend's origin
